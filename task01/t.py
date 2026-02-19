@@ -1,32 +1,28 @@
-while True:
-    print("CLI PERSONAL FINANCE & EXPENSE TRACKER")
+import datetime
+import math
 
-    print('1. Add Income \n2. Add Expense \n3. View financial summary \n4. View category-wise expense breakdown \n5. Search expenses \n6. Save data to file \n7. Load data from file \n8. Exit')
+budget_str = 1500
+total_budget = float(budget_str)
+destination = "Paris"
+travel_date = datetime.datetime(2026, 7, 15)
+date_today = datetime.datetime.today()
+days_until = (travel_date - datetime.datetime.today()).days
+flight_hours = math.ceil(7.4)
 
-    menuOption = input('Choose Your Option: ')
-    if menuOption == "1":
-        income = []
-        while True:            
-            try:
-                amount = float(input('Add Income: '))
-                if amount > 0:
-                    print('Income Added: %d' %amount)
-                    income.append(amount)
-                    break
-                else:
-                    print("income cannot be zero or negative ")
-            
-            except ValueError:
-                print('entered wrong')
-        
-        while True:
-            source = (input('Enter source of income \n(Choose "s" for Salary, "f" for Freelance, "b" for Bonus and "o" for Other): ')).lower()
-            if source in ['s', 'f', 'b', 'o']:
-                print('Source of income added %s' %source)
-                break
-            else:
-                print('Choose from the options')
-    
-    elif menuOption == '8':
-        print('Goodbye')
-        break
+is_international = True
+can_afford = total_budget >= 1000 and is_international
+
+cities_to_visit = ["Eiffel Tower", "Louvre", "Versailles"]
+coordinates = (48.8566, 2.3522)
+
+cities_to_visit.append("Montmartre")
+
+packing_list = {"Passport", "Camera", "Charger"}
+
+packing_list.add('Passport')
+packing_list.add("Walking Shoes")
+
+print(f"Trip to {destination.upper()} in {days_until} days!")
+print(can_afford)
+print(cities_to_visit)
+print(packing_list)
