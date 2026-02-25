@@ -1,0 +1,1 @@
+Laptop: 10, Mouse: 50
